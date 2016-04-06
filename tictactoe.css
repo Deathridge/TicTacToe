@@ -1,0 +1,118 @@
+html, body {
+	height:100%;
+	margin: 0px;
+}
+
+.container {
+	min-height: 100%;
+}
+.grid {
+	display: none;
+	height: 92vh;
+	width: 66%;
+	text-align: center;
+	margin: 0 auto;
+	background-color: black;
+}
+
+.row {
+	height: 30vh;
+	width: 100%;
+	display:inline-block;
+	margin: 0 auto;
+}
+
+@media (max-width: 768px){
+.grid {
+	height: 63vh;
+	width:100%;
+	text-align: center;
+	
+	display: none;
+	background-color: black;
+	
+}
+
+.row {
+	height: 20vh;
+	width: 100%;
+	display:inline-block;
+	margin: 0 auto;
+}
+}
+
+
+
+
+.left {
+	float:left;
+	display: inline-block;
+}
+
+.center {
+	
+	display: inline-block;
+}
+.right {
+	float:right;
+	display: inline-block;
+}
+.square {
+	background-color: black;	
+	color:white;
+	height: 30vh;
+	width: 32.6%;
+	margin-left:0.025%;
+	margin-right:0.025%;
+	margin-bottom: 0.05%;
+	margin-top: 0.05%;	
+	text-align: center;
+	border: solid 1px white;
+}
+
+@media (max-width: 768px){
+	.square {
+		width: 32%;
+		height: 20vh;		
+		margin-left:0.025%;
+		margin-right:0.025%;
+		margin-bottom: 0.025%;
+		margin-top: 0.025%;
+	}
+}
+
+
+
+#selection {
+	z-index: -1;
+	margin: 0 auto;
+	height: 50%;
+	width:50%;
+	background-color: lightgray;
+	text-align: center;
+	margin-top: 20%;
+
+}
+
+#noughts {
+	background-color: grey;	
+	display: inline-block;
+	padding:10%;
+	border: solid 1px black;
+}
+
+#noughts:hover {
+	box-shadow: -2px 2px 2px -1px black;
+}
+
+
+#crosses {
+	background-color: grey;	
+	display: inline-block;
+	padding:10%;
+	border: solid 1px black;
+}
+
+#crosses:hover {
+	box-shadow: -2px 2px 2px -1px black;
+}
