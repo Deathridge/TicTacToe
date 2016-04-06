@@ -82,15 +82,22 @@ function clickSquares() {
 				MinMax.prototype.computerTurn(board, compChar, callback);												
 			}					
 			if(board.isWin()){
-					console.log(board.isWin() + " Wins!");
-					emptyGrid();					
-					hideGrid();									
-					playerTurn();
+				
+				var winner = board.isWin();
+				emptyGrid();
+				hideGrid();
+				displayWinner(winner, undefined);
+				playerTurn();
+				
+
 			}else if(board.isFull()){
-					console.log("Draw!");
-					emptyGrid();
-					hideGrid();	
-					playerTurn();					
+				
+				var full = board.isFull();
+				emptyGrid();
+				hideGrid();	
+				displayWinner(undefined, full);
+				playerTurn();
+				
 			}
 						
 		}
@@ -135,6 +142,17 @@ function emptyGrid(){
 
 }
 
+function displayWinner(winner, draw){
+	var winnerBox = document.getElementById("winner");
+	if(winner != undefined && winner == playerChar){
+		winnerBox.innerHTML = "You Win!";
+	}else if(winner == compChar){
+		winnerBox.innerHTML = "You Lose!";
+	}else {
+		winnerBox.innerHTML = "A draw!";
+	}
+}
+
 var callback = 
 	function (best){		
 		if(board.board[best] == "" && !board.isWin() && !board.isFull()){		
@@ -144,17 +162,19 @@ var callback =
 			return true;
 		}
 
-		if(board.isWin()){
-			console.log(board.isWin() + " Wins!");
+		if(board.isWin()){			
+			var winner = board.isWin();
 			emptyGrid();
 			hideGrid();
+			displayWinner(winner, undefined);
 			playerTurn();
 			
 
-		}else if(board.isFull()){
-			console.log("Draw!");
+		}else if(board.isFull()){			
+			var full = board.isFull();
 			emptyGrid();
 			hideGrid();	
+			displayWinner(undefined, full);
 			playerTurn();
 			
 		}

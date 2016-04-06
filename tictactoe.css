@@ -116,3 +116,7 @@ html, body {
 #crosses:hover {
 	box-shadow: -2px 2px 2px -1px black;
 }
+
+#winner {
+	font-size: 10em;
+}
