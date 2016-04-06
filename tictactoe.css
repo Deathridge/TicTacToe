@@ -120,3 +120,9 @@ html, body {
 #winner {
 	font-size: 10em;
 }
+
+@media (max-width: 768px){
+	#winner {
+		font-size: 2em;
+	}
+}
