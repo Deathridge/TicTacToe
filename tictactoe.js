@@ -4,7 +4,7 @@ var board = new Board();
 
 window.onload = function () {
 var width ;
-
+var height;
 var selection = document.getElementById("selection");
 var grid = document.getElementById("grid");
 var squareClick
@@ -16,7 +16,13 @@ playerTurn();
 
 function playerTurn(){	
 	var noughts = document.getElementById("noughts");	
-	
+	width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+		height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+		var fontWidthDesktop = ((32.6*width /100) /32);
+		var fontWidthMobile = ((32*width /100) /20);
+		var fontHeightDesktop = ((30*height /100) /24);
+		var fontHeightMobile = ((20*height /100) /10);
+
 	var noughtListen = function(){		
 		playerChar = "noughts";
 		compChar = playerChar == "noughts" ? "crosses": "noughts";	
@@ -24,14 +30,16 @@ function playerTurn(){
 		grid.style.display = "block";	
 
 		var squares = document.getElementsByClassName("square");	
-		width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+		
 		if(width > 768){		
 			for(var i =0;i < squares.length;i++){
-				squares[i].style['font-size'] = ((32.6*width /100) /32) + 'em';
+				var fontSize = fontWidthDesktop>fontHeightDesktop?fontHeightDesktop:fontWidthDesktop;
+				squares[i].style['font-size'] = fontSize + 'em';
 			}
 		}else {
 			for(var i =0;i < squares.length;i++){
-				squares[i].style['font-size'] = ((32*width /100) /20) + 'em';
+				var fontSize = (fontWidthMobile>fontHeightMobile)?fontHeightMobile:fontWidthMobile;
+				squares[i].style['font-size'] = fontSize+ 'em';
 			}
 		}
 		MinMax.prototype.computerTurn(board, compChar, callback);		
@@ -48,14 +56,16 @@ function playerTurn(){
 		selection.style.display = "none";
 		grid.style.display = "block";
 		var squares = document.getElementsByClassName("square");	
-		width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+		
 		if(width > 768){		
 			for(var i =0;i < squares.length;i++){
-				squares[i].style['font-size'] = ((32.6*width /100) /32) + 'em';
+				var fontSize = fontWidthDesktop>fontHeightDesktop?fontHeightDesktop:fontWidthDesktop;
+				squares[i].style['font-size'] = fontSize + 'em';
 			}
 		}else {
 			for(var i =0;i < squares.length;i++){
-				squares[i].style['font-size'] = ((32*width /100) /20) + 'em';
+				var fontSize = (fontWidthMobile>fontHeightMobile)?fontHeightMobile:fontWidthMobile;
+				squares[i].style['font-size'] = fontSize+ 'em';
 			}
 		}		
 		clickSquares();		

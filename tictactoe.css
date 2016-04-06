@@ -22,7 +22,7 @@ html, body {
 	margin: 0 auto;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) and (min-height: 552px){
 .grid {
 	height: 63vh;
 	width:100%;
@@ -70,7 +70,7 @@ html, body {
 	border: solid 1px white;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) and (min-height: 552px){
 	.square {
 		width: 32%;
 		height: 20vh;		
@@ -121,7 +121,7 @@ html, body {
 	font-size: 10em;
 }
 
-@media (max-width: 768px){
+@media (max-width: 862px) , (max-height: 552px){
 	#winner {
 		font-size: 2em;
 	}
